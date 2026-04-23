@@ -197,7 +197,7 @@
           class="parallax-video"
           id="parallaxVideo"
           src="f2697_smooth.mp4"
-          muted playsinline preload="auto"
+          muted playsinline autoplay loop preload="auto"
         ></video>
       </div>
       <div class="parallax-text">
@@ -328,6 +328,12 @@
       const wrap = document.getElementById('parallaxWrap');
       const vid  = document.getElementById('parallaxVideo');
       if (!wrap || !vid) return;
+
+      // Mobile: autoplay is already set on the element — skip scrubbing
+      if (window.innerWidth < 768) {
+        vid.play().catch(() => {});
+        return;
+      }
 
       const START_TIME = 2;
 
