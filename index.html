@@ -329,16 +329,7 @@
       const vid  = document.getElementById('parallaxVideo');
       if (!wrap || !vid) return;
 
-      // Mobile: autoplay is already set on the element — skip scrubbing
-      if (window.innerWidth < 768) {
-        vid.play().catch(() => {});
-        return;
-      }
-
       const START_TIME = 2;
-
-      vid.pause();
-      vid.currentTime = START_TIME;
 
       function getTargetTime() {
         const rect     = wrap.getBoundingClientRect();
@@ -348,6 +339,20 @@
         const duration = vid.duration || 0;
         return START_TIME + progress * Math.max(0, duration - START_TIME);
       }
+
+      function initScrub() {
+        vid.pause();
+        vid.currentTime = Math.max(START_TIME, getTargetTime());
+      }
+
+      // Desktop: pause before autoplay can fire
+      vid.pause();
+      // Mobile: autoplay fires first — intercept and pause immediately
+      vid.addEventListener('play', initScrub, { once: true });
+      vid.addEventListener('loadedmetadata', function () {
+        vid.pause();
+        vid.currentTime = Math.max(START_TIME, getTargetTime());
+      });
 
       let ticking = false;
       window.addEventListener('scroll', function () {
@@ -359,10 +364,6 @@
           ticking = true;
         }
       }, { passive: true });
-
-      vid.addEventListener('loadedmetadata', function () {
-        vid.currentTime = Math.max(START_TIME, getTargetTime());
-      });
     })();
   </script>
 </body>

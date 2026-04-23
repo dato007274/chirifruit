@@ -623,6 +623,7 @@ a { text-decoration: none; color: inherit; }
   /* Parallax */
   .parallax-section { min-height: 480px; }
   .parallax-text { margin-left: 1.25rem; margin-right: 1.25rem; padding: 2rem 1.25rem; max-width: 90%; }
+  .parallax-video { transform: scale(1.2); object-position: center 40%; }
 
   /* Blog */
   .blog-grid { grid-template-columns: 1fr; max-width: 480px; }
@@ -663,9 +664,10 @@ a { text-decoration: none; color: inherit; }
   .about-stats { grid-template-columns: 1fr; gap: 1rem; }
 
   /* Parallax */
-  .parallax-section { min-height: 420px; }
+  .parallax-section { min-height: 520px; }
   .parallax-text { margin-left: 1rem; margin-right: 1rem; padding: 1.5rem 1rem; }
   .parallax-text h2 { font-size: 1.4rem; }
+  .parallax-video { transform: scale(1.35); object-position: center 40%; }
 
   /* Blog */
   .blog-grid { padding: 0 1rem; }
