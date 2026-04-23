@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>მაღაზია — ჩირიფრუტი</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@400;600;700;800;900&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="chirifruit_logo_clean.png" alt="ჩირიფრუტი">
+      <span class="nav-logo-text">ჩირიფრუტი</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">მთავარი</a></li>
+      <li><a href="shop.html" class="active">მაღაზია</a></li>
+      <li><a href="about.html">ჩვენ შესახებ</a></li>
+      <li><a href="branch.html">ფილიალები</a></li>
+      <li><a href="contact.html" class="nav-cta">კონტაქტი</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <span class="section-label">ჩირიფრუტი</span>
+    <h1 class="section-title">ჩვენი მაღაზია</h1>
+    <p class="section-desc">შეუკვეთეთ ჩირიფრუტის პროდუქტები Wolt-ის საშუალებით — სწრაფი მიტანა თქვენ სახლამდე.</p>
+  </div>
+
+  <!-- WOLT BANNER -->
+  <div class="wolt-banner">
+    <div class="wolt-banner-inner">
+      <div class="wolt-banner-text">
+        <div class="wolt-banner-label">შეუკვეთეთ ახლავე</div>
+        <div class="wolt-banner-title">ჩირიფრუტი Wolt-ზე</div>
+        <div class="wolt-banner-sub">სწრაფი მიტანა · ახალი პროდუქტები · მარტივი შეკვეთა</div>
+      </div>
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit" target="_blank" rel="noopener" class="wolt-banner-btn">
+        Wolt-ზე შეკვეთა →
+      </a>
+    </div>
+  </div>
+
+  <!-- SHOP SECTION -->
+  <section class="section" style="background: var(--cream);">
+    <div class="section-header">
+      <span class="section-label">პროდუქტები</span>
+      <h2 class="section-title">პოპულარული პროდუქტები</h2>
+      <p class="section-desc">დააჭირეთ პროდუქტს შესაძენად — გადახვალთ Wolt-ის გვერდზე</p>
+    </div>
+
+    <div class="products-grid" style="max-width:1200px; margin:0 auto;">
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit" target="_blank" rel="noopener" class="product-card wolt-product-card">
+        <div class="product-card-image" style="background:linear-gradient(135deg,#6B1A6B,#A040A0);">
+          <span style="font-size:5rem;">🍇</span>
+          <span class="product-card-badge">პოპულარული</span>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">ჩურჩხელა</div>
+          <h3 class="product-card-name">ადესის ჩურჩხელა ნიგვზით</h3>
+          <p class="product-card-desc">წითელი ყურძნის წვენის ჩურჩხელა კაკლით — ტრადიციული გემო.</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">6.50 ₾</span>
+            <span class="wolt-order-btn">Wolt-ზე შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit" target="_blank" rel="noopener" class="product-card wolt-product-card">
+        <div class="product-card-image" style="background:linear-gradient(135deg,#7A1A30,#C03050);">
+          <span style="font-size:5rem;">🍇</span>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">ჩურჩხელა</div>
+          <h3 class="product-card-name">რქაწითელის ჩურჩხელა ნიგვზით</h3>
+          <p class="product-card-desc">რქაწითელის ყურძნის წვენის ჩურჩხელა კაკლით.</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">6.50 ₾</span>
+            <span class="wolt-order-btn">Wolt-ზე შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit" target="_blank" rel="noopener" class="product-card wolt-product-card">
+        <div class="product-card-image" style="background:linear-gradient(135deg,#7A4A00,#C08020);">
+          <span style="font-size:5rem;">🍇</span>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">ჩურჩხელა</div>
+          <h3 class="product-card-name">რქაწითელის ჩურჩხელა თხილით</h3>
+          <p class="product-card-desc">რქაწითელის ყურძნის წვენის ჩურჩხელა თხილით.</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">5.50 ₾</span>
+            <span class="wolt-order-btn">Wolt-ზე შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit" target="_blank" rel="noopener" class="product-card wolt-product-card">
+        <div class="product-card-image" style="background:linear-gradient(135deg,#3D1A0A,#6B3318);">
+          <span style="font-size:5rem;">🍫</span>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">შოკოლადი</div>
+          <h3 class="product-card-name">შოკოლადის ჩურჩხელა</h3>
+          <p class="product-card-desc">ჩირიფრუტის ხელნაკეთი შოკოლადის ჩურჩხელა — ცალობა.</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">3.20 ₾</span>
+            <span class="wolt-order-btn">Wolt-ზე შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit" target="_blank" rel="noopener" class="product-card wolt-product-card">
+        <div class="product-card-image" style="background:linear-gradient(135deg,#1A3D4A,#2080A0);">
+          <span style="font-size:5rem;">🍫</span>
+          <span class="product-card-badge" style="background:var(--orange);">ახალი</span>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">შოკოლადი</div>
+          <h3 class="product-card-name">დუბაის შოკოლადის ბურთი</h3>
+          <p class="product-card-desc">ტრენდული დუბაის სტილის შოკოლადის ბურთი ჩირიფრუტისგან.</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">4.00 ₾</span>
+            <span class="wolt-order-btn">Wolt-ზე შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Categories note -->
+    <div class="wolt-categories">
+      <div class="wolt-categories-title">სრული ასორტიმენტი Wolt-ზე</div>
+      <div class="wolt-categories-list">
+        <span>შოკოლადიანი ჩირის ასორტები</span>
+        <span>·</span>
+        <span>ჩურჩხელა</span>
+        <span>·</span>
+        <span>შოკოლადიანი ჩირი</span>
+        <span>·</span>
+        <span>ტყლაპი და გოზინაყი</span>
+        <span>·</span>
+        <span>ჩაი</span>
+      </div>
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1.5rem;">ყველა პროდუქტი Wolt-ზე →</a>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <img src="chirifruit_logo_clean.png" alt="ჩირიფრუტი">
+            <span class="footer-logo-text">ჩირიფრუტი</span>
+          </div>
+          <p class="footer-tagline">ბუნებრივი ჩირი, შოკოლადი და ჩურჩხელა — ხელნაკეთი, სიყვარულით.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">ნავიგაცია</div>
+          <ul class="footer-links">
+            <li><a href="index.html">მთავარი</a></li>
+            <li><a href="shop.html">მაღაზია</a></li>
+            <li><a href="about.html">ჩვენ შესახებ</a></li>
+            <li><a href="branch.html">ფილიალები</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">პროდუქტები</div>
+          <ul class="footer-links">
+            <li><a href="shop.html">ჩირი</a></li>
+            <li><a href="shop.html">შოკოლადი</a></li>
+            <li><a href="shop.html">ჩურჩხელა</a></li>
+            <li><a href="shop.html">სასაჩუქრე კოლოფები</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">კონტაქტი</div>
+          <div class="footer-contact-item"><span class="footer-contact-icon">📍</span><span>შიო ჩიტაძის ქ. N9ა, თბილისი</span></div>
+          <div class="footer-contact-item"><span class="footer-contact-icon">📞</span><span>599 730 509</span></div>
+          <div class="footer-contact-item"><span class="footer-contact-icon">✉️</span><span>chirifruit@yahoo.com</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 ჩირიფრუტი. ყველა უფლება დაცულია.</span>
+        <span style="color:var(--orange-light);">შექმნილია საქართველოში</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

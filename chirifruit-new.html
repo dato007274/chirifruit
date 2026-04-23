@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chirifruit — Premium Georgian Gifts</title>
+  <meta name="description" content="Premium dried fruits, chocolate and churchkhela from Georgia. Handcrafted gift boxes for every occasion.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;0,800;0,900;1,300&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ─── RESET & BASE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #FDF8F2;
+      color: #1A0F05;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── CSS VARIABLES ─── */
+    :root {
+      --orange:       #F5A520;
+      --orange-dark:  #E8701A;
+      --orange-deep:  #C8600A;
+      --cream:        #FDF8F2;
+      --cream-warm:   #F5E8D8;
+      --green:        #1E3D2F;
+      --green-light:  #2D5C44;
+      --text:         #1A0F05;
+      --text-mid:     #6B4F35;
+      --text-muted:   #A8886A;
+      --white:        #FFFFFF;
+      --grad-hero: linear-gradient(160deg, #F5A520 0%, #E8821A 35%, #D4906A 65%, #C8A878 85%, #BDA088 100%);
+    }
+
+    /* ─── NAVBAR ─── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.5rem 3.5rem;
+      transition: all 0.4s ease;
+    }
+    .nav.solid {
+      background: rgba(253, 248, 242, 0.97);
+      backdrop-filter: blur(20px);
+      padding: 1rem 3.5rem;
+      box-shadow: 0 2px 20px rgba(26,15,5,0.08);
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .nav-brand img { width: 42px; height: 42px; object-fit: contain; }
+    .nav-brand-name {
+      font-size: 1.05rem; font-weight: 800;
+      color: var(--white);
+      transition: color 0.4s ease;
+      letter-spacing: -0.01em;
+    }
+    .nav.solid .nav-brand-name { color: var(--text); }
+    .nav-links {
+      display: flex; align-items: center; gap: 2.5rem; list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.85rem; font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      transition: color 0.3s ease; position: relative;
+    }
+    .nav.solid .nav-links a { color: var(--text-mid); }
+    .nav-links a:hover { color: var(--white); }
+    .nav.solid .nav-links a:hover { color: var(--orange-dark); }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -3px; left: 0;
+      width: 0; height: 1.5px; background: currentColor;
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta-btn {
+      padding: 0.55rem 1.5rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      color: var(--white) !important;
+      font-weight: 700 !important;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease !important;
+    }
+    .nav-cta-btn::after { display: none !important; }
+    .nav-cta-btn:hover { background: rgba(255,255,255,0.32) !important; }
+    .nav.solid .nav-cta-btn {
+      background: var(--orange-dark) !important;
+      border-color: var(--orange-dark) !important;
+    }
+    .nav.solid .nav-cta-btn:hover { background: var(--orange-deep) !important; }
+    .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: background 0.3s ease; }
+    .nav.solid .nav-burger span { background: var(--text); }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      width: 100%; height: 100vh; min-height: 600px;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+    .hero-video-bg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    /* Fallback gradient if video not supported */
+    .hero-gradient-fallback {
+      position: absolute; inset: 0;
+      background: var(--grad-hero);
+      z-index: 0;
+    }
+    .hero-vignette-top {
+      position: absolute; top: 0; left: 0; right: 0; height: 200px;
+      background: linear-gradient(to bottom, rgba(20,8,0,0.3) 0%, transparent 100%);
+      z-index: 1; pointer-events: none;
+    }
+    .hero-vignette-bottom {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
+      background: linear-gradient(to top,
+        rgba(12,5,0,0.78) 0%,
+        rgba(12,5,0,0.42) 45%,
+        transparent 100%);
+      z-index: 1; pointer-events: none;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 4rem 4.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: flex-end;
+      gap: 3rem;
+    }
+    .hero-left {}
+    .hero-kicker {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 1rem;
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+    .hero-kicker::before {
+      content: '';
+      display: block; width: 24px; height: 1.5px;
+      background: rgba(255,255,255,0.5);
+    }
+    .hero-title {
+      font-size: clamp(3.5rem, 8vw, 8rem);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title-sub {
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.72);
+      letter-spacing: 0.01em;
+      max-width: 480px;
+      line-height: 1.6;
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+    .hero-right {
+      display: flex; flex-direction: column;
+      align-items: flex-end; gap: 1rem;
+      padding-bottom: 0.5rem;
+    }
+    .hero-cta-stack {
+      display: flex; flex-direction: column;
+      align-items: flex-end; gap: 0.75rem;
+    }
+    .btn-hero {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.9rem 2.2rem; border-radius: 999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem; font-weight: 700;
+      cursor: pointer; transition: all 0.3s ease;
+      border: 2px solid transparent; white-space: nowrap;
+    }
+    .btn-hero-white {
+      background: var(--white); color: var(--text);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .btn-hero-white:hover { background: var(--orange); color: var(--white); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,112,26,0.5); }
+    .btn-hero-ghost {
+      background: transparent; color: var(--white);
+      border-color: rgba(255,255,255,0.4);
+    }
+    .btn-hero-ghost:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.75); transform: translateY(-2px); }
+    .hero-scroll-cue {
+      position: absolute; bottom: 4rem; left: 50%;
+      transform: translateX(-50%);
+      z-index: 3; display: flex; flex-direction: column;
+      align-items: center; gap: 0.5rem;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+      animation: fadeIn 1.5s 1s both;
+    }
+    .hero-scroll-mouse {
+      width: 20px; height: 32px;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      border-radius: 12px; position: relative;
+    }
+    .hero-scroll-mouse::after {
+      content: '';
+      position: absolute; top: 5px; left: 50%; transform: translateX(-50%);
+      width: 3px; height: 7px; background: rgba(255,255,255,0.5);
+      border-radius: 3px;
+      animation: scrollDot 2s ease-in-out infinite;
+    }
+    @keyframes scrollDot {
+      0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+      100% { transform: translateX(-50%) translateY(10px); opacity: 0; }
+    }
+
+    /* ─── MARQUEE STRIP ─── */
+    .marquee-strip {
+      background: var(--orange-dark);
+      color: var(--white);
+      padding: 0.9rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .marquee-inner {
+      display: inline-flex; gap: 0;
+      animation: marquee 22s linear infinite;
+    }
+    .marquee-item {
+      display: inline-flex; align-items: center; gap: 1.5rem;
+      padding: 0 2rem;
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+    .marquee-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: rgba(255,255,255,0.5); flex-shrink: 0;
+    }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ─── PRODUCTS SPOTLIGHT ─── */
+    .section { padding: 7rem 4rem; }
+    .section-sm { padding: 5rem 4rem; }
+
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--orange-dark); margin-bottom: 1rem;
+    }
+    .section-eyebrow::before {
+      content: ''; width: 20px; height: 2px; background: var(--orange-dark);
+    }
+    .section-h {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900; line-height: 1.05;
+      letter-spacing: -0.03em; color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+    .section-h span { color: var(--orange-dark); }
+
+    /* PRODUCT GRID */
+    .products-spotlight {
+      background: var(--cream);
+    }
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1.25rem;
+      max-width: 1300px; margin: 0 auto;
+    }
+    .spot-card {
+      position: relative; border-radius: 24px;
+      overflow: hidden; cursor: pointer;
+      transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+    .spot-card:hover { transform: translateY(-6px); }
+    .spot-card:hover .spot-img { transform: scale(1.05); }
+    .spot-main {
+      grid-row: 1 / 3;
+      aspect-ratio: 3/4;
+    }
+    .spot-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+    /* Emoji fallback cards */
+    .spot-img-bg {
+      width: 100%; height: 100%; min-height: 220px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem;
+      transition: transform 0.6s ease;
+    }
+    .spot-card:hover .spot-img-bg { transform: scale(1.08); }
+    .spot-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(15,8,2,0.75) 0%, rgba(15,8,2,0.05) 55%, transparent 100%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 1.75rem;
+    }
+    .spot-tag {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--orange);
+      margin-bottom: 0.4rem;
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+    .spot-name {
+      font-size: 1.3rem; font-weight: 800;
+      color: var(--white); line-height: 1.2;
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+    .spot-main .spot-name { font-size: 1.8rem; }
+    .spot-arrow {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px;
+      border-radius: 50%; background: rgba(255,255,255,0.15);
+      margin-top: 0.75rem; color: var(--white);
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .spot-card:hover .spot-arrow { background: var(--orange); transform: translate(3px,-3px); }
+
+    /* ─── BRAND STORY ─── */
+    .brand-story {
+      background: var(--green);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; min-height: 600px;
+    }
+    .brand-story-visual {
+      position: relative; overflow: hidden;
+    }
+    .brand-story-visual video, .brand-story-visual img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .brand-story-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, transparent 60%, var(--green) 100%);
+    }
+    .brand-story-text {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 4.5rem 5rem 4rem;
+      color: var(--white);
+    }
+    .brand-story-text .section-eyebrow { color: var(--orange); }
+    .brand-story-text .section-eyebrow::before { background: var(--orange); }
+    .brand-story-text .section-h { color: var(--white); margin-bottom: 1.25rem; }
+    .brand-story-text .section-h span { color: var(--orange); }
+    .brand-story-p {
+      font-size: 0.95rem; line-height: 1.85;
+      color: rgba(255,255,255,0.68);
+      margin-bottom: 1rem;
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+    .brand-stats {
+      display: flex; gap: 3rem; margin: 2rem 0 2.5rem;
+    }
+    .brand-stat-num {
+      font-size: 2.5rem; font-weight: 900;
+      color: var(--orange); line-height: 1;
+    }
+    .brand-stat-label {
+      font-size: 0.78rem; color: rgba(255,255,255,0.55); margin-top: 0.3rem;
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+    .btn-brand {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 2rem; border-radius: 999px;
+      background: var(--orange-dark); color: var(--white);
+      font-weight: 700; font-size: 0.88rem;
+      cursor: pointer; transition: all 0.3s ease; align-self: flex-start;
+      border: 2px solid transparent;
+    }
+    .btn-brand:hover { background: var(--orange); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,112,26,0.4); }
+    .btn-brand-outline {
+      background: transparent; border-color: rgba(255,255,255,0.35); color: var(--white);
+    }
+    .btn-brand-outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+
+    /* ─── VIDEO GALLERY ─── */
+    .vgallery { background: #F5EDE0; }
+    .vgallery-header {
+      max-width: 1300px; margin: 0 auto 3.5rem;
+      display: flex; align-items: flex-end; justify-content: space-between;
+    }
+    .vgallery-row {
+      max-width: 1300px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .vg-card {
+      position: relative; border-radius: 20px;
+      overflow: hidden; cursor: pointer;
+      aspect-ratio: 16/9;
+      background: #1A0F05;
+      box-shadow: 0 8px 30px rgba(26,15,5,0.15);
+      transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s ease;
+    }
+    .vg-card:hover { transform: translateY(-5px) scale(1.01); box-shadow: 0 20px 50px rgba(26,15,5,0.22); }
+    .vg-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .vg-layer {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(15,8,2,0.6) 0%, rgba(15,8,2,0.05) 60%, transparent 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      transition: opacity 0.3s ease;
+    }
+    .vg-card:hover .vg-layer { opacity: 0.4; }
+    .vg-play-ring {
+      width: 54px; height: 54px; border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+    }
+    .vg-play-ring svg { fill: white; width: 18px; height: 18px; margin-left: 3px; }
+    .vg-card:hover .vg-play-ring { opacity: 0; transform: scale(0.8); }
+    .vg-label {
+      position: absolute; bottom: 1.1rem; left: 1.25rem; right: 1.25rem;
+      font-size: 0.9rem; font-weight: 700;
+      color: var(--white);
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+
+    /* ─── GIFT BOX FEATURE ─── */
+    .gift-feature {
+      background: var(--grad-hero);
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: 1fr 1fr;
+      min-height: 560px;
+    }
+    .gift-feature-text {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 3rem 5rem 5rem;
+      position: relative; z-index: 2;
+    }
+    .gift-feature-eyebrow {
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.6); margin-bottom: 1rem;
+    }
+    .gift-feature-h {
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      font-weight: 900; line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: var(--white); margin-bottom: 1.5rem;
+    }
+    .gift-feature-p {
+      font-size: 0.95rem; line-height: 1.85;
+      color: rgba(255,255,255,0.75); margin-bottom: 2.5rem;
+      max-width: 420px;
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+    .gift-feature-visual {
+      position: relative; display: flex;
+      align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .gift-feature-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .gift-feature-noise {
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.3; pointer-events: none; z-index: 1;
+    }
+    .btn-gift {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 1rem 2.5rem; border-radius: 999px;
+      background: var(--white); color: var(--text);
+      font-weight: 800; font-size: 0.92rem;
+      cursor: pointer; transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2); align-self: flex-start;
+    }
+    .btn-gift:hover { background: var(--green); color: var(--white); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(30,61,47,0.4); }
+
+    /* ─── TESTIMONIAL / TRUST ─── */
+    .trust-section {
+      background: var(--cream);
+      text-align: center;
+    }
+    .trust-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 2rem; max-width: 1100px; margin: 3.5rem auto 0;
+    }
+    .trust-card {
+      background: var(--white); border-radius: 20px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 20px rgba(26,15,5,0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .trust-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(26,15,5,0.12); }
+    .trust-card-icon { font-size: 2.5rem; margin-bottom: 1.25rem; }
+    .trust-card-title {
+      font-size: 1rem; font-weight: 800;
+      color: var(--text); margin-bottom: 0.6rem;
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+    .trust-card-desc {
+      font-size: 0.82rem; line-height: 1.7;
+      color: var(--text-muted);
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: #0F0700;
+      color: rgba(255,255,255,0.55);
+      padding: 5rem 4rem 2.5rem;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 3rem; max-width: 1300px; margin: 0 auto;
+      padding-bottom: 3rem; margin-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-brand img { width: 44px; height: 44px; object-fit: contain; margin-bottom: 1rem; }
+    .footer-brand-name {
+      font-size: 1.3rem; font-weight: 900;
+      color: var(--white); margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .footer-brand-tag {
+      font-size: 0.84rem; line-height: 1.75; max-width: 220px;
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+    .footer-col-title {
+      font-weight: 700; font-size: 0.88rem;
+      color: var(--white); margin-bottom: 1.25rem;
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-col a {
+      font-size: 0.84rem; color: rgba(255,255,255,0.45);
+      transition: color 0.3s ease;
+      font-family: 'Noto Sans Georgian', sans-serif;
+    }
+    .footer-col a:hover { color: var(--orange); }
+    .footer-contact-row { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.8rem; font-size: 0.84rem; }
+    .footer-contact-icon { color: var(--orange); flex-shrink: 0; margin-top: 2px; font-size: 0.9rem; }
+    .footer-bottom {
+      max-width: 1300px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.76rem;
+    }
+    .footer-bottom span:last-child { color: var(--orange); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+    .hero-anim-1 { animation: fadeUp 0.9s 0.2s both; }
+    .hero-anim-2 { animation: fadeUp 0.9s 0.35s both; }
+    .hero-anim-3 { animation: fadeUp 0.9s 0.5s both; }
+    .hero-anim-4 { animation: fadeUp 0.9s 0.65s both; }
+
+    /* scroll reveal */
+    [data-reveal] {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    [data-reveal].visible { opacity: 1; transform: none; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+      .spotlight-grid { grid-template-columns: 1fr 1fr; }
+      .spot-main { grid-row: auto; aspect-ratio: 16/9; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 900px) {
+      .brand-story { grid-template-columns: 1fr; }
+      .brand-story-visual { min-height: 320px; }
+      .brand-story-overlay { background: linear-gradient(to bottom, transparent 50%, var(--green) 100%); }
+      .gift-feature { grid-template-columns: 1fr; }
+      .gift-feature-visual { min-height: 300px; }
+      .vgallery-row { grid-template-columns: 1fr; }
+      .vgallery-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    }
+    @media (max-width: 768px) {
+      .nav { padding: 1.2rem 1.5rem; }
+      .nav.solid { padding: 0.9rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .nav-mobile-open .nav-links {
+        display: flex; flex-direction: column; align-items: center;
+        position: fixed; inset: 0; background: var(--cream);
+        justify-content: center; gap: 2rem; z-index: 99;
+      }
+      .nav-mobile-open .nav-links a { color: var(--text); font-size: 1.2rem; }
+      .hero-content { grid-template-columns: 1fr; padding: 0 1.5rem 3rem; gap: 1.5rem; }
+      .hero-right { align-items: flex-start; }
+      .hero-cta-stack { flex-direction: row; flex-wrap: wrap; }
+      .hero-scroll-cue { display: none; }
+      .section, .section-sm { padding: 4rem 1.5rem; }
+      .spotlight-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer { padding: 4rem 1.5rem 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .gift-feature-text { padding: 3rem 1.5rem; }
+      .brand-story-text { padding: 3rem 1.5rem; }
+      .brand-stats { gap: 1.5rem; }
+      .vgallery-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-brand">
+      <img src="chirifruit_logo_clean.png" alt="Chirifruit">
+      <span class="nav-brand-name">ჩირიფრუტი</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">მთავარი</a></li>
+      <li><a href="shop.html">მაღაზია</a></li>
+      <li><a href="about.html">ჩვენ შესახებ</a></li>
+      <li><a href="branch.html">ფილიალები</a></li>
+      <li><a href="contact.html" class="nav-cta-btn">კონტაქტი</a></li>
+    </ul>
+    <div class="nav-burger" id="navBurger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-gradient-fallback"></div>
+    <video
+      class="hero-video-bg"
+      src="Frame-1 (1).mp4"
+      autoplay muted loop playsinline
+    ></video>
+    <div class="hero-vignette-top"></div>
+    <div class="hero-vignette-bottom"></div>
+
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-kicker hero-anim-1">ჩირიფრუტი · Georgia</div>
+        <h1 class="hero-title hero-anim-2">Chirifruit</h1>
+        <p class="hero-title-sub hero-anim-3">
+          ბუნებრივი გამხმარი ხილი, შოკოლადი და ჩურჩხელა —
+          სიყვარულით შექმნილი
+        </p>
+      </div>
+      <div class="hero-right hero-anim-4">
+        <div class="hero-cta-stack">
+          <a href="shop.html" class="btn-hero btn-hero-white">მაღაზია →</a>
+          <a href="contact.html" class="btn-hero btn-hero-ghost">კონტაქტი</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-cue">
+      <div class="hero-scroll-mouse"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-inner" id="marqueeInner">
+      <!-- duplicated for seamless loop -->
+      <span class="marquee-item">გამხმარი ხილი <span class="marquee-dot"></span></span>
+      <span class="marquee-item">შოკოლადი <span class="marquee-dot"></span></span>
+      <span class="marquee-item">ჩურჩხელა <span class="marquee-dot"></span></span>
+      <span class="marquee-item">სასაჩუქრე კოლოფები <span class="marquee-dot"></span></span>
+      <span class="marquee-item">100% ბუნებრივი <span class="marquee-dot"></span></span>
+      <span class="marquee-item">ხელნაკეთი <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Dried Fruits <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Chocolate <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Churchkhela <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Gift Boxes <span class="marquee-dot"></span></span>
+      <span class="marquee-item">100% Natural <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Handcrafted <span class="marquee-dot"></span></span>
+      <!-- duplicate for seamless -->
+      <span class="marquee-item">გამხმარი ხილი <span class="marquee-dot"></span></span>
+      <span class="marquee-item">შოკოლადი <span class="marquee-dot"></span></span>
+      <span class="marquee-item">ჩურჩხელა <span class="marquee-dot"></span></span>
+      <span class="marquee-item">სასაჩუქრე კოლოფები <span class="marquee-dot"></span></span>
+      <span class="marquee-item">100% ბუნებრივი <span class="marquee-dot"></span></span>
+      <span class="marquee-item">ხელნაკეთი <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Dried Fruits <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Chocolate <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Churchkhela <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Gift Boxes <span class="marquee-dot"></span></span>
+      <span class="marquee-item">100% Natural <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Handcrafted <span class="marquee-dot"></span></span>
+    </div>
+  </div>
+
+  <!-- PRODUCTS SPOTLIGHT -->
+  <section class="section products-spotlight">
+    <div style="max-width: 1300px; margin: 0 auto;">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:3rem; flex-wrap:wrap; gap:1.5rem;">
+        <div>
+          <div class="section-eyebrow" data-reveal>ჩვენი პროდუქცია</div>
+          <h2 class="section-h" data-reveal style="transition-delay:0.1s">პრემიუმ<br><span>კოლექცია</span></h2>
+        </div>
+        <a href="shop.html" data-reveal style="transition-delay:0.2s; display:inline-flex; align-items:center; gap:0.5rem; font-size:0.88rem; font-weight:700; color:var(--orange-dark); text-decoration:none;">
+          ყველა პროდუქტი <span style="font-size:1.1rem">→</span>
+        </a>
+      </div>
+
+      <div class="spotlight-grid">
+        <div class="spot-card spot-main" data-reveal>
+          <div class="spot-img-bg" style="background:linear-gradient(135deg,#2D5C44 0%,#1E3D2F 100%); min-height:100%;">
+            <img src="Gemini_Generated_Image_gxtly3gxtly3gxtl.png" alt="პრემიუმ სასაჩუქრე კოლოფი" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
+          </div>
+          <div class="spot-overlay" style="padding:2.5rem;">
+            <div class="spot-tag">სასაჩუქრე კოლოფი</div>
+            <div class="spot-name">პრემიუმ მიქსი</div>
+            <div class="spot-arrow">→</div>
+          </div>
+        </div>
+
+        <div class="spot-card" data-reveal style="transition-delay:0.1s">
+          <div class="spot-img-bg" style="background:linear-gradient(135deg,#3D1A0A,#6B3318);">🍫</div>
+          <div class="spot-overlay">
+            <div class="spot-tag">შოკოლადი</div>
+            <div class="spot-name">ხელნაკეთი შოკოლადი</div>
+            <div class="spot-arrow">→</div>
+          </div>
+        </div>
+
+        <div class="spot-card" data-reveal style="transition-delay:0.2s">
+          <div class="spot-img-bg" style="background:linear-gradient(135deg,#4A1060,#7B2D8B);">🍇</div>
+          <div class="spot-overlay">
+            <div class="spot-tag">ჩურჩხელა</div>
+            <div class="spot-name">ტრადიციული ჩურჩხელა</div>
+            <div class="spot-arrow">→</div>
+          </div>
+        </div>
+
+        <div class="spot-card" data-reveal style="transition-delay:0.3s">
+          <div class="spot-img-bg" style="background:linear-gradient(135deg,#8B3A00,#E87820);">🍑</div>
+          <div class="spot-overlay">
+            <div class="spot-tag">გამხმარი ხილი</div>
+            <div class="spot-name">ხილის მიქსი</div>
+            <div class="spot-arrow">→</div>
+          </div>
+        </div>
+
+        <div class="spot-card" data-reveal style="transition-delay:0.4s">
+          <div class="spot-img-bg" style="background:linear-gradient(135deg,#1A4A2E,#2D7A50);">🌿</div>
+          <div class="spot-overlay">
+            <div class="spot-tag">სეზონური</div>
+            <div class="spot-name">ახალი კოლექცია</div>
+            <div class="spot-arrow">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND STORY -->
+  <div class="brand-story">
+    <div class="brand-story-visual">
+      <video src="a36de62790f6d31a40ed73f62cd943f8_1_1776771349_3127.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;"></video>
+      <div class="brand-story-overlay"></div>
+    </div>
+    <div class="brand-story-text">
+      <div class="section-eyebrow" data-reveal>ჩვენ შესახებ</div>
+      <h2 class="section-h" data-reveal style="transition-delay:0.1s">
+        ბუნება და<br><span>ტრადიცია</span>
+      </h2>
+      <p class="brand-story-p" data-reveal style="transition-delay:0.2s">
+        ჩვენ ვქმნით ბუნებრივ, ხელნაკეთ პროდუქტებს, რომლებიც
+        ასახავს საქართველოს მდიდარ კულინარიულ ტრადიციებს.
+        ყოველი პროდუქტი მზადდება სიყვარულით.
+      </p>
+      <p class="brand-story-p" data-reveal style="transition-delay:0.25s">
+        ჩირიფრუტი — ეს არის ბრენდი, რომელიც დაფუძნებულია
+        ხარისხის, ნდობის და სიყვარულის პრინციპებზე.
+      </p>
+      <div class="brand-stats" data-reveal style="transition-delay:0.3s">
+        <div>
+          <div class="brand-stat-num">100%</div>
+          <div class="brand-stat-label">ბუნებრივი</div>
+        </div>
+        <div>
+          <div class="brand-stat-num">50+</div>
+          <div class="brand-stat-label">პროდუქტი</div>
+        </div>
+        <div>
+          <div class="brand-stat-num">★5.0</div>
+          <div class="brand-stat-label">შეფასება</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;" data-reveal style="transition-delay:0.4s">
+        <a href="about.html" class="btn-brand">გაიგეთ მეტი →</a>
+        <a href="shop.html" class="btn-brand btn-brand-outline">მაღაზია</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO GALLERY -->
+  <section class="section-sm vgallery">
+    <div class="vgallery-header">
+      <div>
+        <div class="section-eyebrow" data-reveal>ვიდეო</div>
+        <h2 class="section-h" data-reveal style="transition-delay:0.1s">ვიდეო <span>გალერეა</span></h2>
+      </div>
+      <p style="color:var(--text-muted); font-size:0.88rem; max-width:240px; text-align:right; font-family:'Noto Sans Georgian',sans-serif;" data-reveal>
+        გადაიტარეთ მაუსი ვიდეოზე სანახავად
+      </p>
+    </div>
+    <div class="vgallery-row">
+      <div class="vg-card" data-reveal>
+        <video class="vg-video vg-hover-video" src="afe7aac208755626cfd2c2b78fc701b4_1_1776766859_7953.mp4" muted loop playsinline preload="metadata"></video>
+        <div class="vg-layer">
+          <div class="vg-play-ring">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="vg-label">პრემიუმ კოლექცია</div>
+      </div>
+      <div class="vg-card" data-reveal style="transition-delay:0.1s">
+        <video class="vg-video vg-hover-video" src="a36de62790f6d31a40ed73f62cd943f8_1_1776771349_3127.mp4" muted loop playsinline preload="metadata"></video>
+        <div class="vg-layer">
+          <div class="vg-play-ring">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="vg-label">სასაჩუქრე სეტები</div>
+      </div>
+      <div class="vg-card" data-reveal style="transition-delay:0.2s">
+        <video class="vg-video vg-hover-video" src="7b1d15c66400c200fc5988357c7c5b67_1_1776772895_9018.mp4" muted loop playsinline preload="metadata"></video>
+        <div class="vg-layer">
+          <div class="vg-play-ring">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="vg-label">ხელნაკეთი პროდუქტები</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIFT BOX CTA -->
+  <div class="gift-feature">
+    <div class="gift-feature-text">
+      <div class="gift-feature-eyebrow" data-reveal>სასაჩუქრე კოლოფები</div>
+      <h2 class="gift-feature-h" data-reveal style="transition-delay:0.1s">
+        სრულყოფილი<br>საჩუქარი
+      </h2>
+      <p class="gift-feature-p" data-reveal style="transition-delay:0.2s">
+        შექმენით ინდივიდუალური სასაჩუქრე კოლოფი
+        ნებისმიერი შემთხვევისთვის — ქორწილი, დაბადების დღე,
+        კორპორატიული საჩუქარი.
+      </p>
+      <div data-reveal style="transition-delay:0.3s; display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="contact.html" class="btn-gift">დაგვიკავშირდით →</a>
+        <a href="branch.html" style="display:inline-flex;align-items:center;gap:0.5rem;padding:1rem 2rem;border-radius:999px;border:2px solid rgba(255,255,255,0.4);color:white;font-weight:700;font-size:0.9rem;transition:all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='transparent'">ფილიალები</a>
+      </div>
+    </div>
+    <div class="gift-feature-visual">
+      <video src="Frame-1 (1).mp4" autoplay muted loop playsinline class="gift-feature-video"></video>
+      <div class="gift-feature-noise"></div>
+    </div>
+  </div>
+
+  <!-- TRUST CARDS -->
+  <section class="section trust-section">
+    <div class="section-eyebrow" data-reveal style="justify-content:center;">რატომ ჩვენ</div>
+    <h2 class="section-h" data-reveal style="transition-delay:0.1s;text-align:center;">ჩვენი <span>ღირებულებები</span></h2>
+    <div class="trust-grid">
+      <div class="trust-card" data-reveal style="transition-delay:0.05s">
+        <div class="trust-card-icon">🌿</div>
+        <div class="trust-card-title">100% ბუნებრივი</div>
+        <div class="trust-card-desc">ხელოვნური დანამატების, კონსერვანტებისა და გემოს გამაძლიერებლების გარეშე.</div>
+      </div>
+      <div class="trust-card" data-reveal style="transition-delay:0.1s">
+        <div class="trust-card-icon">✋</div>
+        <div class="trust-card-title">ხელნაკეთი</div>
+        <div class="trust-card-desc">ყოველი პროდუქტი მზადდება ტრადიციული, საუკუნეების განმავლობაში გამოცდილი მეთოდებით.</div>
+      </div>
+      <div class="trust-card" data-reveal style="transition-delay:0.15s">
+        <div class="trust-card-icon">🎁</div>
+        <div class="trust-card-title">სასაჩუქრე შეფუთვა</div>
+        <div class="trust-card-desc">ლამაზი, ეკო-მეგობრული შეფუთვა ნებისმიერი სასაჩუქრე შემთხვევისთვის.</div>
+      </div>
+      <div class="trust-card" data-reveal style="transition-delay:0.2s">
+        <div class="trust-card-icon">🚚</div>
+        <div class="trust-card-title">სწრაფი მიტანა</div>
+        <div class="trust-card-desc">სანდო მიწოდება მთელ საქართველოში — სწრაფი, საიმედო და ზრუნვით.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand footer-col">
+        <img src="chirifruit_logo_clean.png" alt="Chirifruit">
+        <div class="footer-brand-name">Chirifruit</div>
+        <p class="footer-brand-tag">ბუნებრივი გამხმარი ხილი, შოკოლადი და ჩურჩხელა — ხელნაკეთი, სიყვარულით.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">ნავიგაცია</div>
+        <ul>
+          <li><a href="index.html">მთავარი</a></li>
+          <li><a href="shop.html">მაღაზია</a></li>
+          <li><a href="about.html">ჩვენ შესახებ</a></li>
+          <li><a href="branch.html">ფილიალები</a></li>
+          <li><a href="contact.html">კონტაქტი</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">პროდუქტები</div>
+        <ul>
+          <li><a href="shop.html">გამხმარი ხილი</a></li>
+          <li><a href="shop.html">შოკოლადი</a></li>
+          <li><a href="shop.html">ჩურჩხელა</a></li>
+          <li><a href="shop.html">სასაჩუქრე კოლოფები</a></li>
+          <li><a href="shop.html">კორპ. შეკვეთები</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">კონტაქტი</div>
+        <div class="footer-contact-row"><span class="footer-contact-icon">📍</span><span>თბილისი, საქართველო</span></div>
+        <div class="footer-contact-row"><span class="footer-contact-icon">📞</span><span>მალე დაემატება</span></div>
+        <div class="footer-contact-row"><span class="footer-contact-icon">✉️</span><span>მალე დაემატება</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Chirifruit — ჩირიფრუტი. ყველა უფლება დაცულია.</span>
+      <span>შექმნილია საქართველოში ❤</span>
+    </div>
+  </footer>
+
+  <script>
+    // ── NAV SCROLL STATE ──
+    const nav = document.getElementById('mainNav');
+    const onScroll = () => nav.classList.toggle('solid', window.scrollY > 80);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // ── MOBILE MENU ──
+    const burger = document.getElementById('navBurger');
+    burger.addEventListener('click', () => {
+      document.body.classList.toggle('nav-mobile-open');
+    });
+    document.querySelectorAll('#navLinks a').forEach(a => {
+      a.addEventListener('click', () => document.body.classList.remove('nav-mobile-open'));
+    });
+
+    // ── VIDEO HOVER PLAY ──
+    document.querySelectorAll('.vg-hover-video, .vgallery-video').forEach(video => {
+      const card = video.closest('.vg-card, .vgallery-card');
+      if (!card) return;
+      card.addEventListener('mouseenter', () => video.play().catch(() => {}));
+      card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+      card.addEventListener('click', () => {
+        video.paused ? video.play().catch(() => {}) : (video.pause(), video.currentTime = 0);
+      });
+    });
+
+    // ── SCROLL REVEAL ──
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('[data-reveal]').forEach(el => ro.observe(el));
+  </script>
+</body>
+</html>

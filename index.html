@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chirifruit — ჩირიფრუტი | ჩირი, შოკოლადი, ჩურჩხელა</title>
+  <meta name="description" content="პრემიუმ ჩირი, შოკოლადი და ჩურჩხელა. ბუნებრივი, ხელნაკეთი, სასაჩუქრე კოლოფები.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Noto+Serif+Georgian:wght@400;600;700;800;900&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar nav-hero" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="chirifruit_logo_clean.png" alt="ჩირიფრუტი">
+      <span class="nav-logo-text">ჩირიფრუტი</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">მთავარი</a></li>
+      <li><a href="shop.html">მაღაზია</a></li>
+      <li><a href="about.html">ჩვენ შესახებ</a></li>
+      <li><a href="branch.html">ფილიალები</a></li>
+      <li><a href="contact.html" class="nav-cta">კონტაქტი</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO — FULL-SCREEN FILM -->
+  <section class="hero-film" id="heroFilm">
+    <video
+      class="hero-film-video"
+      id="heroVideo"
+      src="638a091904236c039dbf45d78655f4f0_1_1776937506_7043.mp4"
+      autoplay muted loop playsinline
+    ></video>
+    <div class="hero-film-overlay"></div>
+    <div class="hero-film-fade-top"></div>
+    <div class="hero-film-fade-bottom"></div>
+
+    <div class="hero-film-center">
+      <div class="hero-film-title">ჩირიფრუტი</div>
+      <div class="hero-film-subtitle">ბუნებრივი ჩირი · შოკოლადი · ჩურჩხელა</div>
+    </div>
+
+    <div class="hero-film-bottom">
+      <div class="hero-film-tags">
+        <span>ჩირი</span>
+        <span class="hero-sep">·</span>
+        <span>შოკოლადი</span>
+        <span class="hero-sep">·</span>
+        <span>ჩურჩხელა</span>
+        <span class="hero-sep">·</span>
+        <span>სასაჩუქრე კოლოფები</span>
+      </div>
+      <div class="hero-film-actions">
+        <a href="shop.html" class="btn btn-film-primary">მაღაზია →</a>
+        <a href="contact.html" class="btn btn-film-outline">კონტაქტი</a>
+      </div>
+    </div>
+
+    <div class="hero-film-scroll">
+      <span>გადახვიეთ</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-item">
+      <div>
+        <div class="trust-text-title">100% ბუნებრივი</div>
+        <div class="trust-text-sub">ხელოვნური დანამატების გარეშე</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div>
+        <div class="trust-text-title">ხელნაკეთი</div>
+        <div class="trust-text-sub">ტრადიციული მეთოდებით</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div>
+        <div class="trust-text-title">სასაჩუქრე შეფუთვა</div>
+        <div class="trust-text-sub">ნებისმიერი შემთხვევისთვის</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="section" style="background: var(--cream);">
+    <div class="section-header">
+      <span class="section-label">ჩვენი პროდუქცია</span>
+      <h2 class="section-title">პოპულარული პროდუქტები</h2>
+      <p class="section-desc">ბუნებრივი ინგრედიენტებით შექმნილი — ჯანსაღი, გემრიელი და ლამაზად შეფუთული.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <div class="product-card" data-category="gift">
+        <div class="product-card-image">
+          <img src="563413916_18326458756232526_4026332581232175475_n.jpg" alt="სასაჩუქრე შეფუთვა">
+          <span class="product-card-badge">პოპულარული</span>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">სასაჩუქრე კოლოფი</div>
+          <h3 class="product-card-name">სასაჩუქრე შეფუთვა</h3>
+          <p class="product-card-desc">ინდივიდუალური სასაჩუქრე კოლოფები — ჩირი, ჩურჩხელა და შოკოლადი ლამაზ შეფუთვაში.</p>
+          <div class="product-card-footer">
+            <span class="product-card-link">კონტაქტისთვის →</span>
+            <a href="shop.html" class="btn btn-primary" style="padding:0.5rem 1.2rem; font-size:0.8rem;">ნახვა</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="fruits">
+        <div class="product-card-image">
+          <img src="481238195_950425087202939_6978171533027666179_n.jpg" alt="ჩირი შოკოლადში">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">ჩირი</div>
+          <h3 class="product-card-name">ჩირი შოკოლადში</h3>
+          <p class="product-card-desc">ბუნებრივი ჩირი პრემიუმ შოკოლადის საფარით — გარგარი, ქლიავი, ლეღვი.</p>
+          <div class="product-card-footer">
+            <span class="product-card-link">კონტაქტისთვის →</span>
+            <a href="shop.html" class="btn btn-primary" style="padding:0.5rem 1.2rem; font-size:0.8rem;">ნახვა</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="churchkhela">
+        <div class="product-card-image">
+          <img src="481454890_953387356906712_3322456929313087791_n.jpg" alt="ჩურჩხელა">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">ჩურჩხელა</div>
+          <h3 class="product-card-name">ჩურჩხელა</h3>
+          <p class="product-card-desc">კახური ტრადიციებით, ყურძნის წვენსა და კაკალზე — ავთენტური გემო.</p>
+          <div class="product-card-footer">
+            <span class="product-card-link">კონტაქტისთვის →</span>
+            <a href="shop.html" class="btn btn-primary" style="padding:0.5rem 1.2rem; font-size:0.8rem;">ნახვა</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="products-cta">
+      <a href="shop.html" class="btn btn-green">ყველა პროდუქტი →</a>
+    </div>
+  </section>
+
+  <!-- ABOUT TEASER -->
+  <div class="about-teaser">
+    <div class="about-teaser-img">
+      <div class="about-teaser-img-frame">
+        <img src="Gemini_Generated_Image_ep07jwep07jwep07.png" alt="ჩირიფრუტი კოლოფი">
+      </div>
+    </div>
+    <div class="about-teaser-text">
+      <span class="section-label">ჩვენ შესახებ</span>
+      <h2 class="section-title" style="color:var(--white); text-align:left; margin-bottom:1rem;">ჩირიფრუტი — <br>ბუნება და ტრადიცია</h2>
+      <p class="section-desc" style="text-align:left; color:rgba(255,255,255,0.72); margin:0 0 2rem;">
+        ჩვენ ვქმნით ბუნებრივ, ხელნაკეთ პროდუქტებს, რომლებიც
+        ასახავს საქართველოს მდიდარ კულინარიულ ტრადიციებს.
+        ყოველი პროდუქტი მზადდება სიყვარულით.
+      </p>
+      <div class="about-stats">
+        <div>
+          <div class="about-stat-num">100%</div>
+          <div class="about-stat-label">ბუნებრივი შემადგენლობა</div>
+        </div>
+        <div>
+          <div class="about-stat-num">50+</div>
+          <div class="about-stat-label">პროდუქტის სახეობა</div>
+        </div>
+        <div>
+          <div class="about-stat-num">★ 5.0</div>
+          <div class="about-stat-label">მომხმარებელთა შეფასება</div>
+        </div>
+      </div>
+      <a href="about.html" class="btn btn-white">გაიგეთ მეტი →</a>
+    </div>
+  </div>
+
+
+  <!-- PARALLAX VIDEO -->
+  <div style="background:#FDF5EE;">
+    <div class="parallax-section">
+      <div style="position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to bottom,transparent,#FDF5EE);z-index:3;pointer-events:none;"></div>
+      <div class="parallax-video-wrap" id="parallaxWrap">
+        <video
+          class="parallax-video"
+          id="parallaxVideo"
+          src="f2697_smooth.mp4"
+          muted playsinline preload="auto"
+        ></video>
+      </div>
+      <div class="parallax-text">
+        <span class="section-label">ჩირიფრუტი 2014-დან</span>
+        <h2>ხელნაკეთი სიყვარულით —<br>ყოველი პროდუქტი</h2>
+        <p>კომპანია ჩირიფრუტი 2014 წლიდან მომხმარებელს სთავაზობს ჩირების, ცუკატების, ტყლაპების, ქართული ტრადიციული ჩურჩხელებისა და შოკოლადიანი ჩირების ფართო ასორტიმენტს.</p>
+        <p>ჩვენი ინდივიდუალური სტილი და გულწრფელი ემოციებით შექმნილი გემოები გამოგვარჩევს — 80-ზე მეტი სახეობის ორიგინალური პროდუქტი, სიყვარულით შექმნილი.</p>
+        <div>
+          <a href="about.html" class="btn btn-primary">გაიგეთ მეტი →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOG SECTION -->
+  <section class="section" style="background:#FDF5EE;">
+    <div class="section-header">
+      <span class="section-label">სიახლეები</span>
+      <h2 class="section-title">ბლოგები</h2>
+    </div>
+    <div class="blog-grid">
+
+      <article class="blog-card">
+        <div class="blog-card-icon" style="padding:0;">
+          <img src="481078750_956508413261273_1724771136119436680_n.jpg" alt="მენდიანტი" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">November 18, 2023</div>
+          <h3 class="blog-card-title">მენდიანტი</h3>
+          <p class="blog-card-excerpt">ყველასთვის საყვარელი "მენდიანტი", არის ტრადიციული ფრანგული ტკბილეული — შოკოლადის მონეტა, მოჭედილი თხილეულითა და ჩირით, რომელიც წარმოადგენდა 4 მონასტრის სიმბოლოს. თითოეული ინგრედიენტი ბერების …</p>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card-icon" style="padding:0;">
+          <img src="117305563_4985414918139022_8547324321435898216_n.jpg" alt="ლეღვის ტყლაპი" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">November 18, 2023</div>
+          <h3 class="blog-card-title">ლეღვის ტყლაპი</h3>
+          <p class="blog-card-excerpt">ლეღვის ტყლაპი გემრიელი და ჯანსაღი მიგნებაა იმისათვის, რომ შევივსოთ მისი მდიდარი, სასარგებლო თვისებებით: ვიტამინები და მინერალები: ლეღვი არის აუცილებელი ვიტამინებისა და მინერალების …</p>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card-icon" style="padding:0;">
+          <img src="131046620_5599982916682216_5033189081318552949_n.jpg" alt="მარწყვის ტყლაპი" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">November 18, 2023</div>
+          <h3 class="blog-card-title">მარწყვის ტყლაპი</h3>
+          <p class="blog-card-excerpt">მარწყვის ტყლაპი ინარჩუნებს ცოცხალი მარწყვის კვებით ღირებულებას და არის ვიტამინებისა და ბოჭკოების კარგი წყარო. მარწყვი სხვადასხვა ვიტამინებისა და საკვები ნივთიერებების მდიდარი წყაროა …</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <span class="section-label">სასაჩუქრე კოლოფები</span>
+    <h2 class="section-title">სრულყოფილი საჩუქარი<br>ნებისმიერი შემთხვევისთვის</h2>
+    <p class="section-desc">
+      დაგვიკავშირდით ინდივიდუალური კოლოფის შედგენისთვის
+      ან ეწვიეთ ჩვენს ახლომდებარე ფილიალს.
+    </p>
+    <div class="cta-actions" style="margin-top:2.5rem;">
+      <a href="contact.html" class="btn btn-primary">დაგვიკავშირდით →</a>
+      <a href="branch.html" class="btn btn-outline">ფილიალები</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <img src="chirifruit_logo_clean.png" alt="ჩირიფრუტი">
+            <span class="footer-logo-text">ჩირიფრუტი</span>
+          </div>
+          <p class="footer-tagline">ბუნებრივი ჩირი, შოკოლადი და ჩურჩხელა — ხელნაკეთი, სიყვარულით.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">ნავიგაცია</div>
+          <ul class="footer-links">
+            <li><a href="index.html">მთავარი</a></li>
+            <li><a href="shop.html">მაღაზია</a></li>
+            <li><a href="about.html">ჩვენ შესახებ</a></li>
+            <li><a href="branch.html">ფილიალები</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">პროდუქტები</div>
+          <ul class="footer-links">
+            <li><a href="shop.html">ჩირი</a></li>
+            <li><a href="shop.html">შოკოლადი</a></li>
+            <li><a href="shop.html">ჩურჩხელა</a></li>
+            <li><a href="shop.html">სასაჩუქრე კოლოფები</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">კონტაქტი</div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span>
+            <span>შიო ჩიტაძის ქ. N9ა, თბილისი</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span>
+            <span>599 730 509</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">✉️</span>
+            <span>chirifruit@yahoo.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 ჩირიფრუტი. ყველა უფლება დაცულია.</span>
+        <span style="color:var(--orange-light);">შექმნილია საქართველოში</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    (function () {
+      const wrap = document.getElementById('parallaxWrap');
+      const vid  = document.getElementById('parallaxVideo');
+      if (!wrap || !vid) return;
+
+      const START_TIME = 2;
+
+      vid.pause();
+      vid.currentTime = START_TIME;
+
+      function getTargetTime() {
+        const rect     = wrap.getBoundingClientRect();
+        const visible  = window.innerHeight - rect.top;
+        const total    = window.innerHeight + rect.height;
+        const progress = Math.min(Math.max(visible / total, 0), 1);
+        const duration = vid.duration || 0;
+        return START_TIME + progress * Math.max(0, duration - START_TIME);
+      }
+
+      let ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(function () {
+            vid.currentTime = getTargetTime();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      vid.addEventListener('loadedmetadata', function () {
+        vid.currentTime = Math.max(START_TIME, getTargetTime());
+      });
+    })();
+  </script>
+</body>
+</html>

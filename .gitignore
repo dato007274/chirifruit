@@ -1,0 +1,20 @@
+# Large video files
+*.mov
+*.mp4
+*.webm
+
+# Social media images (not website assets)
+117305563_*.jpg
+131046620_*.jpg
+481078750_*.jpg
+481238195_*.jpg
+481454890_*.jpg
+563413916_*.jpg
+
+# Gemini generated images (not website assets)
+Gemini_Generated_Image_*.png
+
+# Original/reference files
+original-*.webp
+reference.md
+SKILL*.md
