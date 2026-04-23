@@ -667,7 +667,7 @@ a { text-decoration: none; color: inherit; }
   .parallax-section { min-height: 520px; }
   .parallax-text { margin-left: 1rem; margin-right: 1rem; padding: 1.5rem 1rem; }
   .parallax-text h2 { font-size: 1.4rem; }
-  .parallax-video { transform: scale(1.35); object-position: center 40%; }
+  .parallax-video { transform: scale(1.35); object-position: 25% 40%; }
 
   /* Blog */
   .blog-grid { padding: 0 1rem; }
