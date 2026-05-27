@@ -557,6 +557,16 @@ a { text-decoration: none; color: inherit; }
 .about-header-bg .section-title { color: #fff; }
 .about-header-bg .section-desc  { color: rgba(255,255,255,0.85); }
 .about-header-bg::before { display: none; }
+.branch-header-bg {
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.45) 100%),
+    url('ch3.jpg') center center / cover no-repeat;
+  color: #fff;
+}
+.branch-header-bg .section-label { color: var(--orange); text-shadow: 0 1px 8px rgba(0,0,0,0.8); }
+.branch-header-bg .section-title { color: #fff; }
+.branch-header-bg .section-desc  { color: rgba(255,255,255,0.85); }
+.branch-header-bg::before { display: none; }
 .shop-header-bg .section-label { color: var(--orange); text-shadow: 0 1px 8px rgba(0,0,0,0.8); }
 .shop-header-bg .section-title { color: #fff; }
 .shop-header-bg .section-desc  { color: rgba(255,255,255,0.85); }
