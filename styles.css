@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap');
 
 :root {
   --orange: #E8701A;
@@ -367,6 +367,27 @@ a { text-decoration: none; color: inherit; }
 .product-card-link { font-size: 0.83rem; font-weight: 700; color: var(--green); transition: color var(--transition); }
 .product-card-link:hover { color: var(--orange); }
 .products-cta { text-align: center; margin-top: 3rem; }
+
+/* ── PRODUCT ICON CARDS ── */
+.product-card-icon {
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 4/3; font-size: 3rem;
+}
+.product-price {
+  font-family: var(--font-serif); font-size: 1.2rem; font-weight: 900;
+  color: var(--green);
+}
+/* ── PRODUCT FILTER BUTTONS ── */
+.product-filters { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: 2.5rem; }
+.filter-btn {
+  padding: 0.45rem 1.1rem; border: 2px solid var(--green); border-radius: 2rem;
+  background: transparent; color: var(--green); font-size: 0.82rem; font-weight: 700;
+  cursor: pointer; transition: all 0.2s ease; font-family: var(--font-sans);
+}
+.filter-btn:hover, .filter-btn.filter-active {
+  background: var(--green); color: var(--white);
+}
+.product-card.hidden { display: none; }
 
 /* ── ABOUT TEASER (homepage) ── */
 .about-teaser {
