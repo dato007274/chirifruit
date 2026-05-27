@@ -451,6 +451,20 @@ a { text-decoration: none; color: inherit; }
 .wolt-banner-sub { font-size: 0.9rem; color: rgba(255,255,255,0.8); }
 .wolt-banner-btn { display: inline-flex; align-items: center; padding: 0.9rem 2.2rem; background: #fff; color: #009de0; font-family: var(--font-sans); font-size: 1rem; font-weight: 800; border-radius: var(--radius-round); white-space: nowrap; transition: transform var(--transition), box-shadow var(--transition); }
 .wolt-banner-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+.wolt-delivery-info {
+  max-width: 1100px; margin: 2rem auto 0;
+  display: flex; flex-wrap: wrap; gap: 1.2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+.wolt-delivery-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  background: rgba(255,255,255,0.12); border-radius: 0.75rem;
+  padding: 0.75rem 1.1rem; flex: 1; min-width: 180px;
+}
+.wolt-delivery-icon { font-size: 1.4rem; flex-shrink: 0; }
+.wolt-delivery-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.65); margin-bottom: 0.15rem; }
+.wolt-delivery-value { font-size: 0.92rem; font-weight: 700; color: #fff; }
 .wolt-product-card { text-decoration: none; color: inherit; display: flex; flex-direction: column; cursor: pointer; }
 .wolt-product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
 .wolt-price { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 900; color: var(--green); }
