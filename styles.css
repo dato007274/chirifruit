@@ -551,7 +551,7 @@ a { text-decoration: none; color: inherit; }
 .shop-header-bg     { background: linear-gradient(to bottom,rgba(0,0,0,0.72)0%,rgba(0,0,0,0.60)100%), url('ch.jpg')  center center/cover no-repeat; }
 .about-header-bg    { background: linear-gradient(to bottom,rgba(0,0,0,0.72)0%,rgba(0,0,0,0.60)100%), url('ch1.jpg') center center/cover no-repeat; }
 .branch-header-bg   { background: linear-gradient(to bottom,rgba(0,0,0,0.72)0%,rgba(0,0,0,0.60)100%), url('ch3.jpg') center center/cover no-repeat; }
-.contact-header-bg  { background: linear-gradient(to bottom,rgba(0,0,0,0.72)0%,rgba(0,0,0,0.60)100%), url('ch4.jpg') center center/cover no-repeat; }
+.contact-header-bg  { background: linear-gradient(to bottom,rgba(0,0,0,0.72)0%,rgba(0,0,0,0.60)100%), url('ch5.jpg') center center/cover no-repeat; }
 
 .shop-header-bg .section-label,
 .about-header-bg .section-label,
