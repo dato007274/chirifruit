@@ -541,6 +541,16 @@ a { text-decoration: none; color: inherit; }
   border-radius: 50%;
 }
 .page-header .section-title { font-size: clamp(2.5rem,5vw,4rem); }
+.shop-header-bg {
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.45) 100%),
+    url('ch.jpg') center center / cover no-repeat;
+  color: #fff;
+}
+.shop-header-bg .section-label { color: rgba(255,255,255,0.75); }
+.shop-header-bg .section-title { color: #fff; }
+.shop-header-bg .section-desc  { color: rgba(255,255,255,0.85); }
+.shop-header-bg::before { display: none; }
 .page-header .section-desc { margin-top: 1rem; }
 
 /* ── SHOP FILTERS ── */
