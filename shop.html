@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ka">
 <head>
   <meta charset="UTF-8">
@@ -53,109 +53,372 @@
   <section class="section" style="background: var(--cream);">
     <div class="section-header">
       <span class="section-label">პროდუქტები</span>
-      <h2 class="section-title">პოპულარული პროდუქტები</h2>
+      <h2 class="section-title">ყველა პროდუქტი</h2>
       <p class="section-desc">დააჭირეთ პროდუქტს შესაძენად — გადახვალთ Wolt-ის გვერდზე</p>
     </div>
 
-    <div class="products-grid" style="max-width:1200px; margin:0 auto;">
+    <!-- Filter buttons -->
+    <div class="product-filters">
+      <button class="filter-btn filter-active" data-filter="all">ყველა</button>
+      <button class="filter-btn" data-filter="chiri">ჩირი</button>
+      <button class="filter-btn" data-filter="shokoladi">შოკოლადი</button>
+      <button class="filter-btn" data-filter="churchkhela">ჩურჩხელა</button>
+      <button class="filter-btn" data-filter="assorti">ასორტი</button>
+    </div>
 
-      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit" target="_blank" rel="noopener" class="product-card wolt-product-card">
-        <div class="product-card-image" style="background:linear-gradient(135deg,#6B1A6B,#A040A0);">
-          <span style="font-size:5rem;">🍇</span>
+    <div class="products-grid" id="shop-grid" style="max-width:1200px; margin:0 auto;">
+
+      <!-- ჩირი -->
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="chiri">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/b6773242-92dd-11eb-8fa9-8e5485c22653_2000001702079_________200__.jpeg" alt="შერეული ტყლაპი" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">ჩირი</div>
+          <h3 class="product-card-name">შერეული ტყლაპი</h3>
+          <p class="product-card-desc">Fruit Candy Roll · 200გრ</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">16 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="chiri">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/c8bd35c0-7103-11ef-9450-4e6649ae30c6____________________.jpg" alt="ჩირის ასორტი" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">ჩირი</div>
+          <h3 class="product-card-name">ჩირის ასორტი</h3>
+          <p class="product-card-desc">Dried Fruit Assort · 300გრ</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">31 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="chiri assorti">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/fbece66e-92dd-11eb-a101-c2911868a0bb_2100100175870_______.jpeg" alt="ასორტი საკურა" loading="lazy">
           <span class="product-card-badge">პოპულარული</span>
         </div>
         <div class="product-card-body">
-          <div class="product-card-category">ჩურჩხელა</div>
-          <h3 class="product-card-name">ადესის ჩურჩხელა ნიგვზით</h3>
-          <p class="product-card-desc">წითელი ყურძნის წვენის ჩურჩხელა კაკლით — ტრადიციული გემო.</p>
+          <div class="product-card-category">ასორტი · 500გრ</div>
+          <h3 class="product-card-name">ასორტი "საკურა"</h3>
+          <p class="product-card-desc">Assort "Sakura"</p>
           <div class="product-card-footer">
-            <span class="wolt-price">6.50 ₾</span>
-            <span class="wolt-order-btn">Wolt-ზე შეკვეთა →</span>
+            <span class="wolt-price">53 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
           </div>
         </div>
       </a>
 
-      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit" target="_blank" rel="noopener" class="product-card wolt-product-card">
-        <div class="product-card-image" style="background:linear-gradient(135deg,#7A1A30,#C03050);">
-          <span style="font-size:5rem;">🍇</span>
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="chiri assorti">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/ded30e66-7103-11ef-b1ca-924f5d40bd55_____.jpg" alt="ჩირის ასორტი ნექტარი" loading="lazy">
         </div>
         <div class="product-card-body">
-          <div class="product-card-category">ჩურჩხელა</div>
-          <h3 class="product-card-name">რქაწითელის ჩურჩხელა ნიგვზით</h3>
-          <p class="product-card-desc">რქაწითელის ყურძნის წვენის ჩურჩხელა კაკლით.</p>
+          <div class="product-card-category">ასორტი · 600გრ</div>
+          <h3 class="product-card-name">ჩირის ასორტი "ნექტარი"</h3>
+          <p class="product-card-desc">Dried Fruit Assort "Nectar"</p>
           <div class="product-card-footer">
-            <span class="wolt-price">6.50 ₾</span>
-            <span class="wolt-order-btn">Wolt-ზე შეკვეთა →</span>
+            <span class="wolt-price">50 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
           </div>
         </div>
       </a>
 
-      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit" target="_blank" rel="noopener" class="product-card wolt-product-card">
-        <div class="product-card-image" style="background:linear-gradient(135deg,#7A4A00,#C08020);">
-          <span style="font-size:5rem;">🍇</span>
+      <!-- შოკოლადი -->
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="shokoladi">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/bf78390e-92dd-11eb-8963-ee47e3dd9261_2000001702086____________200__.jpeg" alt="შოკოლადის მენდიანტი" loading="lazy">
         </div>
         <div class="product-card-body">
-          <div class="product-card-category">ჩურჩხელა</div>
-          <h3 class="product-card-name">რქაწითელის ჩურჩხელა თხილით</h3>
-          <p class="product-card-desc">რქაწითელის ყურძნის წვენის ჩურჩხელა თხილით.</p>
+          <div class="product-card-category">შოკოლადი · 200გრ</div>
+          <h3 class="product-card-name">შოკოლადის მენდიანტი</h3>
+          <p class="product-card-desc">Dark Chocolate Mendiants</p>
           <div class="product-card-footer">
-            <span class="wolt-price">5.50 ₾</span>
-            <span class="wolt-order-btn">Wolt-ზე შეკვეთა →</span>
+            <span class="wolt-price">25 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
           </div>
         </div>
       </a>
 
-      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit" target="_blank" rel="noopener" class="product-card wolt-product-card">
-        <div class="product-card-image" style="background:linear-gradient(135deg,#3D1A0A,#6B3318);">
-          <span style="font-size:5rem;">🍫</span>
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="shokoladi">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/d6b2cd6e-92dd-11eb-8929-2af90e27b43e_2000001702109______________________200__.jpeg" alt="ფორთოხალი შოკოლადში" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">შოკოლადი · 200გრ</div>
+          <h3 class="product-card-name">ფორთოხალი შოკოლადში</h3>
+          <p class="product-card-desc">Candied Orange in Chocolate</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">18.50 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="shokoladi assorti">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/d57fe884-7103-11ef-ae4a-2a8f145b16b0____.jpg" alt="შოკოლადის ასორტი ილუ" loading="lazy">
+          <span class="product-card-badge">პოპულარული</span>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">შოკოლადის ასორტი · 570გრ</div>
+          <h3 class="product-card-name">შოკოლადის ასორტი "ილუ"</h3>
+          <p class="product-card-desc">Chocolate Assort "Ilu"</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">56 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="shokoladi assorti">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/2fa84ef8-92de-11eb-b7a4-7a2fc0463e96_637______________.jpeg" alt="შოკოლადის ასორტი მაო" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">შოკოლადის ასორტი · 560გრ</div>
+          <h3 class="product-card-name">შოკოლადის ასორტი "მაო"</h3>
+          <p class="product-card-desc">Chocolate Assort "Mao"</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">51 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="shokoladi assorti">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/e7a4f5ae-7103-11ef-9f4e-4e6649ae30c6_____.jpg" alt="შოკოლადის ასორტი ვუდი" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">შოკოლადის ასორტი · 700გრ</div>
+          <h3 class="product-card-name">შოკოლადის ასორტი "ვუდი"</h3>
+          <p class="product-card-desc">Chocolate Assort "Woody"</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">74 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="shokoladi churchkhela">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/bf7e2b10-680b-11ee-a91a-26cf0b15b67b____________________100.jpg" alt="კარამელის ჩურჩხელა" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">შოკოლადი · 100გრ</div>
+          <h3 class="product-card-name">კარამელის ჩურჩხელა</h3>
+          <p class="product-card-desc">Caramel with Hazelnuts</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">15.50 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="shokoladi">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/e28a9248-1359-11ef-84d3-62b765df353f________.jpg" alt="შოკოლადის ხინკალი" loading="lazy">
         </div>
         <div class="product-card-body">
           <div class="product-card-category">შოკოლადი</div>
+          <h3 class="product-card-name">შოკოლადის ხინკალი</h3>
+          <p class="product-card-desc">Chocolate Khinkali</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">18 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="shokoladi">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/1c99be28-135a-11ef-ba77-8e483d44133a_432860022_334506476297499_3193246574144295442_n.jpg" alt="შოკოლადის სიგარა" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">შოკოლადი</div>
+          <h3 class="product-card-name">შოკოლადის სიგარა</h3>
+          <p class="product-card-desc">Chocolate Cigare</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">35 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="shokoladi assorti">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/assets/69c4e78ebe24b9d9bf2aaeb7" alt="შოკოლადის ასორტი პედრო" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">შოკოლადის ასორტი · 350გრ</div>
+          <h3 class="product-card-name">შოკოლადის ასორტი "პედრო"</h3>
+          <p class="product-card-desc">Chocolate Assort "Pedro"</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">40 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="shokoladi assorti">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/f1a015de-7103-11ef-a023-d6a06086ca6b_____.jpg" alt="შოკოლადის ასორტი იოიო" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">შოკოლადის ასორტი · 350გრ</div>
+          <h3 class="product-card-name">შოკოლადის ასორტი "იოიო"</h3>
+          <p class="product-card-desc">Chocolate Assort "Ioio"</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">42 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="shokoladi">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/d4b0dda4-65b2-11ed-b889-c2219d4de344_3001234567002.jfif.jpeg" alt="შოკოლადის ფილა თბილისი" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">შოკოლადი · 90გრ</div>
+          <h3 class="product-card-name">შოკოლადის ფილა "თბილისი"</h3>
+          <p class="product-card-desc">Chocolate Bar "Tbilisi"</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">13 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="shokoladi">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/assets/69c4e799be24b9d9bf2aaebb" alt="მენდიანტი წითელ ყუთში" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">შოკოლადი</div>
+          <h3 class="product-card-name">მენდიანტი წითელ ყუთში</h3>
+          <p class="product-card-desc">Mendiants in Red Box</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">25 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="shokoladi">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/2e64afda-76f0-11ed-9664-827e86608ba5__3077_________.jpeg" alt="ნიგვზის გოზინაყი" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">შოკოლადი · 120გრ</div>
+          <h3 class="product-card-name">ნიგვზის გოზინაყი</h3>
+          <p class="product-card-desc">Walnuts with Honey</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">22 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="assorti">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/assets/69c4e791be24b9d9bf2aaeb9" alt="ასორტი კალანდა" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">ასორტი</div>
+          <h3 class="product-card-name">ასორტი "კალანდა"</h3>
+          <p class="product-card-desc">Assort "Kalanda"</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">55 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ჩურჩხელა -->
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit/items/menucategory-3" target="_blank" rel="noopener" class="product-card wolt-product-card" data-category="churchkhela">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/cb6826ca-92dd-11eb-9094-3e0442ccea80_2000001702093_____________________100__.jpeg" alt="შოკოლადის ჩურჩხელა" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">ჩურჩხელა · 100გრ</div>
           <h3 class="product-card-name">შოკოლადის ჩურჩხელა</h3>
-          <p class="product-card-desc">ჩირიფრუტის ხელნაკეთი შოკოლადის ჩურჩხელა — ცალობა.</p>
+          <p class="product-card-desc">Chocolate Churchkhela</p>
           <div class="product-card-footer">
-            <span class="wolt-price">3.20 ₾</span>
-            <span class="wolt-order-btn">Wolt-ზე შეკვეთა →</span>
+            <span class="wolt-price">15.50 ₾</span>
+            <span class="wolt-order-btn">შეკვეთა →</span>
           </div>
         </div>
       </a>
 
-      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit" target="_blank" rel="noopener" class="product-card wolt-product-card">
-        <div class="product-card-image" style="background:linear-gradient(135deg,#1A3D4A,#2080A0);">
-          <span style="font-size:5rem;">🍫</span>
-          <span class="product-card-badge" style="background:var(--orange);">ახალი</span>
+      <!-- გაყიდული -->
+      <div class="product-card" data-category="shokoladi" style="opacity:0.6;">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/assets/69c4e79cbe24b9d9bf2aaebc" alt="დუბაის შოკოლადი" loading="lazy">
+          <span class="product-card-badge" style="background:#999;">გაყიდულია</span>
         </div>
         <div class="product-card-body">
-          <div class="product-card-category">შოკოლადი</div>
-          <h3 class="product-card-name">დუბაის შოკოლადის ბურთი</h3>
-          <p class="product-card-desc">ტრენდული დუბაის სტილის შოკოლადის ბურთი ჩირიფრუტისგან.</p>
+          <div class="product-card-category">შოკოლადი · 130გრ</div>
+          <h3 class="product-card-name">დუბაის შოკოლადი</h3>
+          <p class="product-card-desc">Dubai Chocolate</p>
           <div class="product-card-footer">
-            <span class="wolt-price">4.00 ₾</span>
-            <span class="wolt-order-btn">Wolt-ზე შეკვეთა →</span>
+            <span class="wolt-price">28 ₾</span>
+            <span style="font-size:0.82rem;color:#999;font-weight:700;">არ არის ხელმისაწვდომი</span>
           </div>
         </div>
-      </a>
+      </div>
+
+      <div class="product-card" data-category="assorti" style="opacity:0.6;">
+        <div class="product-card-image">
+          <img src="https://imageproxy.wolt.com/menu/menu-images/6065a93c1b4ca7d1f24a8abc/3abfc528-92de-11eb-89b4-9ea015f3de42_3000123459355___________.jpeg" alt="გლინტვეინის ნაკრები" loading="lazy">
+          <span class="product-card-badge" style="background:#999;">გაყიდულია</span>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">ასორტი</div>
+          <h3 class="product-card-name">გლინტვეინის ნაკრები</h3>
+          <p class="product-card-desc">Mulled Wine Assort</p>
+          <div class="product-card-footer">
+            <span class="wolt-price">22 ₾</span>
+            <span style="font-size:0.82rem;color:#999;font-weight:700;">არ არის ხელმისაწვდომი</span>
+          </div>
+        </div>
+      </div>
 
     </div>
 
-    <!-- Categories note -->
-    <div class="wolt-categories">
-      <div class="wolt-categories-title">სრული ასორტიმენტი Wolt-ზე</div>
-      <div class="wolt-categories-list">
-        <span>შოკოლადიანი ჩირის ასორტები</span>
-        <span>·</span>
-        <span>ჩურჩხელა</span>
-        <span>·</span>
-        <span>შოკოლადიანი ჩირი</span>
-        <span>·</span>
-        <span>ტყლაპი და გოზინაყი</span>
-        <span>·</span>
-        <span>ჩაი</span>
-      </div>
-      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1.5rem;">ყველა პროდუქტი Wolt-ზე →</a>
+    <div class="products-cta">
+      <a href="https://wolt.com/en/geo/tbilisi/venue/chirifruit" target="_blank" rel="noopener" class="btn btn-green">სრული კატალოგი Wolt-ზე →</a>
     </div>
 
   </section>
+
+  <script>
+    (function () {
+      const btns  = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('#shop-grid .product-card, #shop-grid a.product-card');
+      btns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          btns.forEach(b => b.classList.remove('filter-active'));
+          this.classList.add('filter-active');
+          const filter = this.dataset.filter;
+          document.querySelectorAll('#shop-grid [data-category]').forEach(card => {
+            if (filter === 'all' || card.dataset.category.split(' ').includes(filter)) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    })();
+  </script>
 
   <!-- FOOTER -->
   <footer class="footer">
