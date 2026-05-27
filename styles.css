@@ -547,7 +547,7 @@ a { text-decoration: none; color: inherit; }
     url('ch.jpg') center center / cover no-repeat;
   color: #fff;
 }
-.shop-header-bg .section-label { color: rgba(255,255,255,0.75); }
+.shop-header-bg .section-label { color: var(--orange); text-shadow: 0 1px 8px rgba(0,0,0,0.8); }
 .shop-header-bg .section-title { color: #fff; }
 .shop-header-bg .section-desc  { color: rgba(255,255,255,0.85); }
 .shop-header-bg::before { display: none; }
