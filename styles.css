@@ -560,7 +560,7 @@ a { text-decoration: none; color: inherit; }
 .shop-header-bg .section-title,
 .about-header-bg .section-title,
 .branch-header-bg .section-title {
-  color: #fff;
+  color: var(--orange);
   text-shadow: 0 2px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8);
 }
 .shop-header-bg .section-desc,
